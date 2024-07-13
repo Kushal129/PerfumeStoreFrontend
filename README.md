@@ -16,16 +16,6 @@ This is a Perfume Website built with React.js, Vite, and Tailwind CSS. The websi
 - **Vite:** Next generation frontend tooling.
 - **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
 
-## Color Scheme
-
-- **Primary:** #071952
-- **Secondary:** #088395
-- **Accent:** #37B7C3
-- **Light Background:** #EBF4F6
-- **Dark Background:** #071952
-- **Text Color:** #eeeeee
-
-
 ## Installation
 
 1. Clone the repository:
@@ -59,4 +49,4 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 ## License
 
-Replace `https://github.com/Kushal129/perfume-website.git` with your actual GitHub repository URL. This README file provides an overview of your project, including its features, tech stack, installation steps, usage instructions, folder structure, and contribution guidelines.
+This project is licensed under the MIT License.
