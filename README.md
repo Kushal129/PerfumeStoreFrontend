@@ -25,13 +25,6 @@ This is a Perfume Website built with React.js, Vite, and Tailwind CSS. The websi
 - **Dark Background:** #071952
 - **Text Color:** #eeeeee
 
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Kushal129/perfume-website.git
-cd perfume-website
 
 ## Installation
 
@@ -51,6 +44,7 @@ cd perfume-website
     ```bash
     npm start
     ```
+
 
 ## Usage
 
