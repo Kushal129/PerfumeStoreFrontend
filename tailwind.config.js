@@ -10,6 +10,8 @@ export default {
       colors:{
         bgdark: "#00072D",
         bgcolor: "#EBF4F6",
+        glassblue: "#07195259",
+        glasswhite: "#bff4ff3d",
         primary: "#071952",
         heading: "#088395",
         branddeepblue: "#03113F",

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IoSearchSharp } from "react-icons/io5";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import DarkMode from './DarkMode';
 
 const MenuLinks = [
@@ -24,21 +24,45 @@ const MenuLinks = [
         name: "Contact Us",
         link: "/#contactus",
     },
+];
+
+const DropdownLinks = [
+    {
+        id: 1,
+        name: "Trending Products",
+        link: "/#",
+    },
+    {
+        id: 2,
+        name: "Best Selling",
+        link: "/#",
+    },
+    {
+        id: 3,
+        name: "Top Rated",
+        link: "/#",
+    },
 ]
 const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleDarkMode = () => {
-        setDarkMode((prevMode) => !prevMode);
-    };
+    const [darkMode, setDarkMode] = useState(() => {
+        // Initialize state based on localStorage value
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme === 'dark';
+    });
 
     useEffect(() => {
+        // Apply the theme to the document
         if (darkMode) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
+        localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     }, [darkMode]);
+
+    const toggleDarkMode = () => {
+        setDarkMode(prevMode => !prevMode);
+    };
 
     return (
         <div className='bg-bgcolor dark:bg-bgdark dark:text-white duration-200 relative z-40'>
@@ -48,9 +72,9 @@ const Navbar = () => {
                     <div className='flex items-center gap-4'>
                         <a
                             href="#"
-                            className="text-primary ml-2 hover:text-brandBlue dark:text-bgcolor dark:hover:text-brandlightcyan font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
+                            className="text-primary ml-2 hover:text-brandBlue dark:text-bgcolor dark:hover:text-brandlightcyan font-semibold tracking-widest text-2xl uppercase sm:text-3xl duration-200"
                         >
-                            Perfume
+                            HK Fragrance
                         </a>
                         {/* Menu Items */}
                         <div className='hidden lg:block'>
@@ -58,13 +82,41 @@ const Navbar = () => {
                                 {MenuLinks.map((data) => (
                                     <li key={data.id}>
                                         <a href={data.link}
-                                            className='inline-block px-4 font-semibold text-primary
-                                             hover:text-brandBlue dark:text-bgcolor
-                                              dark:hover:text-brandlightcyan duration-200'>
+                                            className='inline-block px-4 font-semibold text-primary hover:text-brandBlue dark:text-bgcolor dark:hover:text-brandlightcyan duration-200'>
                                             {data.name}
                                         </a>
                                     </li>
                                 ))}
+                                {/* dropdown */}
+                                <li className='relative cursor-pointer group'>
+                                    <a
+                                        href='#'
+                                        className='flex items-center gap-[2px] font-semibold hover:text-brandBlue text-primary dark:text-brandWhite dark:hover:text-brandlightcyan duration-200 py-2'>
+                                        Quick Links
+                                        <span>
+                                            <FaCaretDown className='group-hover:rotate-180 hover:text-brandBlue text-primary dark:text-brandWhite' />
+                                        </span>
+                                    </a>
+
+                                    {/* dropdown Links  */}
+                                    <div className='absolute z-[9999] hidden group-hover:block w-[200px] bg-bgcolor rounded-md text-primary bg-shadow-md dark:bg-glassblue p-2'>
+
+                                        <ul className='space-y-2'>
+                                            {
+                                                DropdownLinks.map((data, index ) => (
+                                                    <li>
+                                                        <a
+                                                        className=' text-primary hover:text-brandBlue dark:text-brandWhite
+                                                         dark:hover:text-brandlightcyan duration-200 p-2 font-semibold'
+                                                        //  inline-block w-full duration-200 p-2 hover:bg-primary 
+                                                        href={data.link}>{data.name}</a>
+                                                    </li>
+                                                ) )
+                                            }
+                                        </ul>
+                                    </div>
+
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -82,7 +134,6 @@ const Navbar = () => {
                             />
                         </div>
 
-
                         {/* Order-button section  */}
                         <button className='relative p-3'>
                             <FaShoppingCart className='text-2xl text-primary hover:text-brandBlue dark:text-brandWhite dark:hover:text-brandlightcyan' />
@@ -90,7 +141,7 @@ const Navbar = () => {
                                 className='w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs'>4</div>
                         </button>
                         {/* Dark Mode Section */}
-                        <div className='sm:mr-0 mr-2'>
+                        <div className='sm:mr-0 mr-2 duration-200'>
                             <DarkMode darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                         </div>
                     </div>

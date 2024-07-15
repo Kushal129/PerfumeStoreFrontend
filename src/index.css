@@ -8,12 +8,20 @@
   }
 }
 
+@layer utilities {
+  .hero-bg-color{
+    @apply bg-gradient-to-r from-brandlightcyan to-bgcolor dark:from-branddeepblue
+     dark:to-bgdark dark:text-brandWhite ; 
+  }
+}
+
+
 
 .theme-switch {
   --toggle-size: 12px;
   /* the size is adjusted using font-size,
      this is not transform scale,
-     so you can choose any size */
+     so you can choose any size */  
   --container-width: 5.625em;
   --container-height: 2.5em;
   --container-radius: 6.25em;
@@ -21,8 +29,8 @@
   --container-light-bg: #3D7EAE;
   --container-night-bg: #1D1F2C;
   --circle-container-diameter: 3.375em;
-  --sun-moon-diameter: 2.125em;
-  --sun-bg: #ECCA2F;
+  --sun-moon-diameter: 1.850em;
+  --sun-bg: #ebc621;
   --moon-bg: #C4C9D1;
   --spot-color: #959DB1;
   --circle-container-offset: calc((var(--circle-container-diameter) - var(--container-height)) / 2 * -1);
