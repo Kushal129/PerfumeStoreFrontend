@@ -1,11 +1,11 @@
 import React from 'react';
 import Slider from "react-slick";
-import Img1 from "../../assets/images/Perfume_img/pr1.png"
+// import Img1 from "../../assets/images/Perfume_img/pr1.png"
 import Img2 from "../../assets/images/Perfume_img/pr2.png"
-import Img3 from "../../assets/images/Perfume_img/pr3.png"
+// import Img3 from "../../assets/images/Perfume_img/pr3.png"
 import Img4 from "../../assets/images/Perfume_img/at1.png"
-import Img5 from "../../assets/images/Perfume_img/at2.png"
-import Img6 from "../../assets/images/Perfume_img/at3.png"
+// import Img5 from "../../assets/images/Perfume_img/at2.png"
+// import Img6 from "../../assets/images/Perfume_img/at3.png"
 
 import Button from '../Shared/Button';
 

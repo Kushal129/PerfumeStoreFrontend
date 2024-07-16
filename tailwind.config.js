@@ -13,10 +13,13 @@ export default {
         glassblue: "#07195259",
         glasswhite: "#bff4ff3d",
         primary: "#071952",
+        primarycat: "#000516e6",
         heading: "#088395",
+        primarygcat2: "#021214f2",
         branddeepblue: "#03113F",
         brandlightcyan: "#C7F5FF",
         brandBlue: "#4057A3",
+        brandPurplelight: "#c4d3ff",
         brandWhite: "#eeeeee",
       },
       container:{

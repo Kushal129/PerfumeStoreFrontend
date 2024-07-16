@@ -30,19 +30,20 @@ const DropdownLinks = [
     {
         id: 1,
         name: "Trending Products",
-        link: "/#",
+        link: "/#trending",
     },
     {
         id: 2,
         name: "Best Selling",
-        link: "/#",
+        link: "/#best-selling",
     },
     {
         id: 3,
         name: "Top Rated",
-        link: "/#",
+        link: "/#top-rated",
     },
-]
+];
+
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(() => {
         // Initialize state based on localStorage value
@@ -87,7 +88,7 @@ const Navbar = () => {
                                         </a>
                                     </li>
                                 ))}
-                                {/* dropdown */}
+                                {/* Dropdown */}
                                 <li className='relative cursor-pointer group'>
                                     <a
                                         href='#'
@@ -98,20 +99,18 @@ const Navbar = () => {
                                         </span>
                                     </a>
 
-                                    {/* dropdown Links  */}
+                                    {/* Dropdown Links */}
                                     <div className='absolute z-[9999] hidden group-hover:block w-[200px] bg-bgcolor rounded-md text-primary bg-shadow-md dark:bg-glassblue p-2'>
 
                                         <ul className='space-y-2'>
                                             {
-                                                DropdownLinks.map((data, index ) => (
-                                                    <li>
+                                                DropdownLinks.map((data) => (
+                                                    <li key={data.id}>
                                                         <a
-                                                        className=' text-primary hover:text-brandBlue dark:text-brandWhite
-                                                         dark:hover:text-brandlightcyan duration-200 p-2 font-semibold'
-                                                        //  inline-block w-full duration-200 p-2 hover:bg-primary 
-                                                        href={data.link}>{data.name}</a>
+                                                            className='text-primary hover:text-brandBlue dark:text-brandWhite dark:hover:text-brandlightcyan duration-200 p-2 font-semibold'
+                                                            href={data.link}>{data.name}</a>
                                                     </li>
-                                                ) )
+                                                ))
                                             }
                                         </ul>
                                     </div>
@@ -120,9 +119,9 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </div>
-                    {/* Navbar Right Section  */}
+                    {/* Navbar Right Section */}
                     <div className='flex justify-between items-center gap-4'>
-                        {/* Search Bar Section  */}
+                        {/* Search Bar Section */}
                         <div className="relative group hidden sm:block">
                             <input
                                 type="text"
@@ -134,7 +133,7 @@ const Navbar = () => {
                             />
                         </div>
 
-                        {/* Order-button section  */}
+                        {/* Order-button section */}
                         <button className='relative p-3'>
                             <FaShoppingCart className='text-2xl text-primary hover:text-brandBlue dark:text-brandWhite dark:hover:text-brandlightcyan' />
                             <div
