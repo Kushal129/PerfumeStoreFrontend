@@ -44,7 +44,7 @@ const DropdownLinks = [
     },
 ];
 
-const Navbar = () => {
+const Navbar = ({handleOrderPopup}) => {
     const [darkMode, setDarkMode] = useState(() => {
         // Initialize state based on localStorage value
         const savedTheme = localStorage.getItem('theme');
@@ -66,7 +66,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='bg-bgcolor dark:bg-bgdark dark:text-white duration-200 relative z-40'>
+        <div className='bg-bgcolor dark:bg-bgdark dark:text-white duration-200 z-40'>
             <div className='py-5'>
                 <div className="container flex justify-between items-center">
                     {/* Logo and links section */}
@@ -134,7 +134,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Order-button section */}
-                        <button className='relative p-3'>
+                        <button className='relative p-3' onClick={handleOrderPopup}>
                             <FaShoppingCart className='text-2xl text-primary hover:text-brandBlue dark:text-brandWhite dark:hover:text-brandlightcyan' />
                             <div
                                 className='w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs'>4</div>

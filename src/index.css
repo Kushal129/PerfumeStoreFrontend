@@ -13,6 +13,10 @@
     @apply bg-gradient-to-r from-brandlightcyan to-bgcolor dark:from-branddeepblue
      dark:to-bgdark dark:text-brandWhite ; 
   }
+  .form-input {
+    @apply w-full rounded-md border border-primary dark:border-bgdark px-2 py-1 mb-4;
+
+  }
 }
 
 

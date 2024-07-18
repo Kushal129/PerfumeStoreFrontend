@@ -77,11 +77,11 @@ const ProductsData2 = [
 const Products = () => {
   return (
     <div>
-      <div className='container'>
+      <div className='container text-primary dark:text-brandWhite'>
         {/* header sectoion  */}
         <Heading
           title="Our Products"
-          subtitle="Explore Our Products"
+          subtitle="Explore Our Products" 
         />
         {/* body  section  */}
         <ProductCard ProductsData={ProductsData} />

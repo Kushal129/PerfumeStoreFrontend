@@ -8,6 +8,7 @@ const BlogData = [
       subtitle: "Discover how to select a fragrance that complements your personality.",
       published: "July 16, 2024",
       image: "https://www.myglamm.com/_next/image?url=https%3A%2F%2Ffiles.myglamm.com%2Fsite-images%2F768x432%2FHow-to-choose-right-perfume.jpg&w=828&q=75",
+      aosDelay:"0",
     },
     {
       id: 2,
@@ -15,6 +16,7 @@ const BlogData = [
       subtitle: "Explore the rich history and unique characteristics of traditional attar.",
       published: "July 18, 2024",
       image: "https://img.freepik.com/premium-photo/attar-distillation-showcase-traditional-method-attar-oil-production_977107-166.jpg",
+      aosDelay:"200",
     },
     {
       id: 3,
@@ -22,13 +24,14 @@ const BlogData = [
       subtitle: "Learn about the different fragrance notes and how they create a lasting impression.",
       published: "July 20, 2024",
       image: "https://setaracosmetics.it/cdn/shop/articles/payramid.png?v=1694458888&width=1100",
+      aosDelay:"400",
     },
   ];
   
 
 const Blogs = () => {
   return (
-    <div>
+    <div className='my-12'>
       <div className="container">
       <Heading
           title="Recent News"
@@ -37,11 +40,12 @@ const Blogs = () => {
 
         {/* Blog section  */}
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
-        gap-6 gap-y-8 sm:gap-4 md:gap-7'>
+        gap-6 gap-y-8 sm:gap-4 md:gap-7 m-2'>
             {/* blog card  */}
             {
                 BlogData.map((data) =>(
-                    <div key={data.title} className=' dark:bg-primary rounded-2xl'>
+                    <div  data-aos="fade-up"
+                    data-aos-delay={data.aosDelay} key={data.title} className=' dark:bg-primary rounded-2xl'>
                       {/* img section  */}
                         <div className='overflow-hidden rounded-2xl mb-2'>
                           <img src={data.image} alt=""
@@ -54,13 +58,11 @@ const Blogs = () => {
                           <p className='line-clamp-2 text-sm text-gray-600 dark:text-brandWhite'>{data.subtitle}</p>
                         </div>
                     </div>
-                ))
-            }
+                ))}
         </div>
-
       </div>
     </div>
   );
-};
+};  
 
 export default Blogs;

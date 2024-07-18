@@ -7,7 +7,8 @@ const ProductCard = ({ ProductsData }) => {
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
         {/* Map through ProductsData to render each product card */}
         {ProductsData.map((data) => (
-          <div className='group' key={data.id}>
+          <div  data-aos="fade-up"
+          data-aos-delay={data.aosDelay} className='group' key={data.id}>
             <div className='relative'>
               <img
                 src={data.img}

@@ -61,7 +61,7 @@ const HeroSlider = [
     // },
 ]
 
-const Hero = () => {
+const Hero = ({handleOrderPopup}) => {
     const settings = {
         dots: false,
         arrows: false,
@@ -87,21 +87,46 @@ const Hero = () => {
                                     <div className='flex flex-col justify-center gap-4 
                                         sm:pl-3 pt-12 sm:pt-0 text-center
                                         sm:text-left order-2 sm:order-1 relative z-10'>
-                                        <h1 className='text-2xl sm:text-6xl lg:text-2xl font-bold' >{data.subtitle}</h1>
-                                        <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold'>{data.title}</h1>
-                                        <h1 className='text-7xl uppercase text-bgdark/80 dark:text-brandlightcyan
+                                        <h1 data-aos="zoom-out"
+                                            data-aos-duration="500"
+                                            data-aos-once="true"
+                                         className='text-primary/70 dark:text-bgcolor text-2xl sm:text-6xl lg:text-2xl font-bold' >{data.subtitle}</h1>
+                                        <h1 data-aos="zoom-out"
+                                            data-aos-duration="500"
+                                            data-aos-once="true"
+                                        className='text-primarylight dark:text-brandlightcyan/80 text-4xl sm:text-5xl lg:text-6xl font-bold overflow-hidden'>{data.title}</h1>
+                                        <h1
+                                        data-aos="zoom-out"
+                                        data-aos-duration="500"
+                                        data-aos-once="true" 
+                                        className='text-7xl uppercase text-primary dark:text-heading
                                         sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold'>{data.title2}</h1>
-                                        <p className='text-sm font-semibold '>{data.description}</p>
-                                        <div>
+                                        <p 
+                                        data-aos="fade-up"
+                                        data-aos-offset="0"
+                                        data-aos-duration="500"
+                                        data-aos-delay="300"
+                                        className='text-primary/80 dark:text-bgcolor text-sm font-semibold '>{data.description}</p>
+                                        <div 
+                                        data-aos="fade-up"
+                                        data-aos-offset="0"
+                                        data-aos-duration="500"
+                                        data-aos-delay="300"
+                                        >
                                             <Button text="Shop By Category"
                                                 bgColor="bg-primary"
                                                 textColor="text-brandWhite"
+                                                handler={handleOrderPopup}
                                             />
                                         </div>
                                     </div>
                                     {/* Img section  */}
                                     <div className='order-1 sm:order-2'>
-                                        <div>
+                                        <div
+                                        data-aos="zoom-out"
+                                        data-aos-once="true"
+                                        className='relative z-10'
+                                        >
                                             <img
                                                 src={data.img}
                                                 alt={data.title}
